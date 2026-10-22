@@ -28,3 +28,10 @@ SIPP Account
 Available to invest:	£15,920.98
 Total securities:	£277,566.35
 Total value:	£293,487.33
+
+
+cat figures.txt | ./portfolio.py -c 18708.76
+
+667226.62	848859.65
+
+BV=667226.62 MV=848859.65

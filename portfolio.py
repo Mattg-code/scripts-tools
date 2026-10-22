@@ -14,6 +14,7 @@ import copy
 
 from my_utils import str2float, str2int, StockDataCols
 from analysis import analysePortfolio, MAIN_TITLE_LIST, TOTALS_TRAILER_LIST
+from analysis import PortfolioCols
 
 TAB=0x9
 LF=0xa
@@ -29,6 +30,73 @@ class TabbedCols:
     CURR_COST_TAB=4
     MARKET_VAL_TAB=5
 
+"""
+@brief 
+@param lst holdings list
+@param total_bv book value
+@param total_mv mrkt value
+@param csv csv output
+@param show_title print the heading a.k.a. title if true
+@param show_median 
+"""
+def displayHoldingList(
+        lst,
+        total_bv,
+        total_mv,
+        csv=True,
+        show_title=False,
+        show_median=False):
+    # assume csv output for now
+
+    if show_title:
+        heading = ''
+        col_num = 0
+        for col_heading in MAIN_TITLE_LIST:
+            justify_by = 9 if col_num<PortfolioCols.MRKT_COL else 12
+            heading = heading + col_heading.ljust(justify_by) + ','
+            col_num = col_num + 1
+        print(heading)
+
+    median_mrkt_val = 0.0
+    median_ix = 0
+    if show_median:
+        # deduce median row ix.
+        
+        adjusted_count = len(lst) if len(lst) % 2 else len(lst) + 1
+        median_ix = int(adjusted_count/2)
+        median_mrkt_val = lst[median_ix][PortfolioCols.MRKT_COL]
+        if 0.0 == median_mrkt_val:
+            raise ValueError("WTF? Median mrkt val should not be 0.0!!")
+
+    row_num = 0    
+    for ll in lst:
+        line = ''
+        for col in ll:
+            line = line + str(col) + ','
+
+        if show_median:
+            median_x = ll[PortfolioCols.MRKT_COL] / median_mrkt_val
+            median_x = f"{median_x:.2f}x"
+            line = line + median_x.rjust(6) + ','
+            if median_ix == row_num:
+                line = line + " median ,"                
+            row_num = row_num + 1
+                
+        print(line)            
+            
+    trailer = copy.deepcopy(TOTALS_TRAILER_LIST)
+    trailer[PortfolioCols.BOOK_COL] = round(total_bv, 2)
+    trailer[PortfolioCols.MRKT_COL] = round(total_mv, 2)
+    line = ''
+    for col in trailer:
+        line = line + str(col) + ','
+    print(line)
+
+    line = ''
+    for col in trailer:
+        line = line + ','
+    print(line)
+    
 """
 @brief Using the brackets split out the name and epic from the first tabbed
 field
@@ -163,31 +231,33 @@ def process(ifile, cash):
             line = ''        
         
     analysis = analysePortfolio(epic_map, total_mv)
-    alphabetical_lst = sorted(analysis, key=lambda x: x[0])
+    alphabetical_lst = sorted(analysis, key=lambda x: x[PortfolioCols.NAME_COL])
+    displayHoldingList(
+        alphabetical_lst, total_bv, total_mv, csv=True, show_title=True)
+    
+    mrkt_val_lst = sorted(
+        analysis,
+        key=lambda x: x[PortfolioCols.MRKT_COL],
+        reverse=True)
+    displayHoldingList(
+        mrkt_val_lst,
+        total_bv,
+        total_mv,
+        csv=True,
+        show_title=False,
+        show_median=True)
 
-    heading = ''
-    #col_num = 0
-    for col_heading in MAIN_TITLE_LIST:
-        heading = heading + col_heading + ','
-        #col_num = col_num + 1
-        #if len(MAIN_TITLE_LIST) != col_num:
-        #    heading = heading + ','
+    pl_val_lst = sorted(
+        analysis,
+        key=lambda x: x[PortfolioCols.P_L_COL],
+        reverse=True)
+    displayHoldingList(
+        pl_val_lst,
+        total_bv,
+        total_mv,
+        csv=True,
+        show_title=False)
 
-    print(heading)
-    for ll in alphabetical_lst:
-        line = ''
-        for col in ll:
-            line = line + str(col) + ','
-        print(line)            
-            
-    
-#    name_sort = sorted(sorted_holdings, key=lambda x: x[SORT_DESC])
-    
-#    print(f"BV={total_bv:.2f} MV={total_mv:.2f}")
-    trailer = copy.deepcopy(TOTALS_TRAILER_LIST)
-    trailer[PortfolioCols.BOOK_COL] = total_bv
-    trailer[PortfolioCols.MRKT_COL] = total_mv
-    
 HLP="Hello"    
     
 def main():
