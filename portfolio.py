@@ -10,9 +10,10 @@ cat figures.txt | ./portfolio.py -c 18708.76
 
 import sys
 import argparse
-import my_utils
+import copy
+
 from my_utils import str2float, str2int, StockDataCols
-from analysis import analysePortfolio, MAIN_TITLE_LIST
+from analysis import analysePortfolio, MAIN_TITLE_LIST, TOTALS_TRAILER_LIST
 
 TAB=0x9
 LF=0xa
@@ -161,9 +162,8 @@ def process(ifile, cash):
             total_mv = total_mv + mv
             line = ''        
         
-    #print(epic_map)
     analysis = analysePortfolio(epic_map, total_mv)
-    lst = sorted(analysis, key=lambda x: x[0])
+    alphabetical_lst = sorted(analysis, key=lambda x: x[0])
 
     heading = ''
     #col_num = 0
@@ -174,16 +174,19 @@ def process(ifile, cash):
         #    heading = heading + ','
 
     print(heading)
-    for ll in lst:
+    for ll in alphabetical_lst:
         line = ''
         for col in ll:
             line = line + str(col) + ','
         print(line)            
             
-
+    
 #    name_sort = sorted(sorted_holdings, key=lambda x: x[SORT_DESC])
     
-    #print(f"BV={total_bv:.2f} MV={total_mv:.2f}")
+#    print(f"BV={total_bv:.2f} MV={total_mv:.2f}")
+    trailer = copy.deepcopy(TOTALS_TRAILER_LIST)
+    trailer[PortfolioCols.BOOK_COL] = total_bv
+    trailer[PortfolioCols.MRKT_COL] = total_mv
     
 HLP="Hello"    
     
