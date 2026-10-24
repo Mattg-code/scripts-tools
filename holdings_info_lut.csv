@@ -1,63 +1,79 @@
-EPIC     ,TYPE,REGION,BUSINESS,TYPES,REGIONS,BUSINESS,NOTES
-FOUR,0.UK Share,9.USA,12.Diverse,0.UK Share,0.UK,0.Insurance,Merchandise
-ADM,0.UK Share,0.UK,0.Insurance,1.US Share,1.Global,1.Semiconductors,
-AJB,0.UK Share,0.UK,7.AssetManagement,2.IT,2.China,2.Software+Analysis,
-GOOG,1.US Share,1.Global,9.Tech,3.OEIC,3.Japan,3.Retail+Consumer+Books+Fags,
-AAL,0.UK Share,1.Global,4.Mining,4.European Share,4.India,4.Mining,
-ANTO,0.UK Share,1.Global,4.Mining,,5.Vietnam,5.Energy,
-ASML,4.European Share,1.Global,1.Semiconductors,,6.Europe,6.Industrial+Engineering,
-AZN,0.UK Share,1.Global,8.Pharmaceutial+HealthCare,,7.OtherAsian,7.AssetManagement,
-BA.,0.UK Share,1.Global,10.Defense,,8.Emerging,8.Pharmaceutial+HealthCare,
-BERI,2.IT,1.Global,5.Energy,,9.USA,9.Tech,
-BRWM,2.IT,1.Global,4.Mining,,,10.Defense,
-BMY,0.UK Share,1.Global,3.Retail+Consumer+Books+Fags,,,11.Construction+Infrastructure,
-BOY,0.UK Share,1.Global,6.Industrial+Engineering,,,12.Diverse,
-CASH,,,,,,13.IT-Services,
-CCJI,2.IT,3.Japan,12.Diverse,,,,
-CSCO,1.US Share,1.Global,9.Tech,,,,Networks
-CTY,2.IT,0.UK,12.Diverse,,,,Shipping
-CKN,0.UK Share,1.Global,12.Diverse,,,,
-KO,1.US Share,1.Global,3.Retail+Consumer+Books+Fags,,,,
-CCC,0.UK Share,1.Global,13.IT-Services,,,,
-FCSS,2.IT,2.China,12.Diverse,,,,
-FIAAGM,3.OEIC,1.Global,12.Diverse,,,,
-GFRD,0.UK Share,0.UK,11.Construction+Infrastructure,,,,
-GAW,0.UK Share,1.Global,3.Retail+Consumer+Books+Fags,,,,
-GEN,0.UK Share,0.UK,11.Construction+Infrastructure,,,,
-GSK,0.UK Share,1.Global,8.Pharmaceutial+HealthCare,,,,
-HLMA,0.UK Share,1.Global,12.Diverse,,,,
-HFEL,2.IT,7.OtherAsian,12.Diverse,,,,
-HILS,0.UK Share,1.Global,6.Industrial+Engineering,,,,
-IMB,0.UK Share,1.Global,3.Retail+Consumer+Books+Fags,,,,
-ITRK,0.UK Share,1.Global,12.Diverse,,,,
-IBT,2.IT,1.Global,8.Pharmaceutial+HealthCare,,,,
-IGET,2.IT,1.Global,12.Diverse,,,,
-JNJ,1.US Share,1.Global,8.Pharmaceutial+HealthCare,,,,
-JCGI,2.IT,2.China,12.Diverse,,,,
-JEGI,2.IT,6.Europe,12.Diverse,,,,
-JIGI,2.IT,4.India,12.Diverse,,,,
-KLR,0.UK Share,1.Global,11.Construction+Infrastructure,,,,
-LGEN,0.UK Share,1.Global,7.AssetManagement,,,,
-MRCH,2.IT,1.Global,12.Diverse,,,,
-MGNS,0.UK Share,0.UK,11.Construction+Infrastructure,,,,
-MYI,2.IT,1.Global,12.Diverse,,,,
-NG.,0.UK Share,1.Global,5.Energy,,,,
-NXT,0.UK Share,0.UK,3.Retail+Consumer+Books+Fags,,,,
-NAIT,2.IT,1.Global,12.Diverse,,,,
-NVDA,1.US Share,1.Global,1.Semiconductors,,,,
-PSN,0.UK Share,0.UK,11.Construction+Infrastructure,,,,
-PLUS,0.UK Share,1.Global,7.AssetManagement,,,,
-PCT,2.IT,1.Global,9.Tech,,,,
-QQ.,0.UK Share,1.Global,12.Diverse,,,,
-REL,0.UK Share,1.Global,2.Software+Analysis,,,,
-RSW,0.UK Share,1.Global,6.Industrial+Engineering,,,,
-ROR,0.UK Share,1.Global,6.Industrial+Engineering,,,,
-ATR,2.IT,7.OtherAsian,12.Diverse,,,,
-SHEL,0.UK Share,1.Global,5.Energy,,,,
-SCT,0.UK Share,0.UK,13.IT-Services,,,,
-SPX,0.UK Share,1.Global,6.Industrial+Engineering,,,,
-ESCT,2.IT,6.Europe,12.Diverse,,,,
-SGE,0.UK Share,1.Global,2.Software+Analysis,,,,
-ULVR,0.UK Share,1.Global,3.Retail+Consumer+Books+Fags,,,,
-UEM,2.IT,8.Emerging,12.Diverse,,,,
-VOF,2.IT,5.Vietnam,12.Diverse,,,,
+TYPES,REGIONS,BUSINESS,
+0.UK Share,0.UK,0.Insurance,
+1.US Share,1.Global,1.Semiconductors,
+2.IT,2.China,2.Software+Analysis,
+3.OEIC,3.Japan,3.Retail+Consumer+Books+Fags,
+4.European Share,4.India,4.Mining,
+5.Cash,5.Vietnam,5.Energy,
+,6.Europe,6.Industrial+Engineering,
+,7.OtherAsian,7.AssetManagement,
+,8.Emerging,8.Pharmaceutial+HealthCare,
+,9.USA,9.Tech,
+,,10.Defense,
+,,11.Construction+Infrastructure,
+,,12.Diverse,
+,,13.IT-Services,
+,,,
+EPIC     ,TYPE,REGION,BUSINESS
+FOUR,0.UK Share,9.USA,12.Diverse
+ADM,0.UK Share,0.UK,0.Insurance
+AJB,0.UK Share,0.UK,7.AssetManagement
+GOOG,1.US Share,1.Global,9.Tech
+AAL,0.UK Share,1.Global,4.Mining
+ANTO,0.UK Share,1.Global,4.Mining
+ASML,4.European Share,1.Global,1.Semiconductors
+AZN,0.UK Share,1.Global,8.Pharmaceutial+HealthCare
+BA.,0.UK Share,1.Global,10.Defense
+BERI,2.IT,1.Global,5.Energy
+BRWM,2.IT,1.Global,4.Mining
+BMY,0.UK Share,1.Global,3.Retail+Consumer+Books+Fags
+BOY,0.UK Share,1.Global,6.Industrial+Engineering
+CASH,5.Cash,,
+CCJI,2.IT,3.Japan,12.Diverse
+CSCO,1.US Share,1.Global,9.Tech
+CTY,2.IT,0.UK,12.Diverse
+CKN,0.UK Share,1.Global,12.Diverse
+KO,1.US Share,1.Global,3.Retail+Consumer+Books+Fags
+CCC,0.UK Share,1.Global,13.IT-Services
+FCSS,2.IT,2.China,12.Diverse
+FIAAGM,3.OEIC,1.Global,12.Diverse
+GFRD,0.UK Share,0.UK,11.Construction+Infrastructure
+GAW,0.UK Share,1.Global,3.Retail+Consumer+Books+Fags
+GEN,0.UK Share,0.UK,11.Construction+Infrastructure
+GSK,0.UK Share,1.Global,8.Pharmaceutial+HealthCare
+HLMA,0.UK Share,1.Global,12.Diverse
+HFEL,2.IT,7.OtherAsian,12.Diverse
+HILS,0.UK Share,1.Global,6.Industrial+Engineering
+IMB,0.UK Share,1.Global,3.Retail+Consumer+Books+Fags
+ITRK,0.UK Share,1.Global,12.Diverse
+IBT,2.IT,1.Global,8.Pharmaceutial+HealthCare
+IGET,2.IT,1.Global,12.Diverse
+JNJ,1.US Share,1.Global,8.Pharmaceutial+HealthCare
+JCGI,2.IT,2.China,12.Diverse
+JEGI,2.IT,6.Europe,12.Diverse
+JIGI,2.IT,4.India,12.Diverse
+KLR,0.UK Share,1.Global,11.Construction+Infrastructure
+LGEN,0.UK Share,1.Global,7.AssetManagement
+MRCH,2.IT,1.Global,12.Diverse
+MGNS,0.UK Share,0.UK,11.Construction+Infrastructure
+MYI,2.IT,1.Global,12.Diverse
+NG.,0.UK Share,1.Global,5.Energy
+NXT,0.UK Share,0.UK,3.Retail+Consumer+Books+Fags
+NAIT,2.IT,1.Global,12.Diverse
+NVDA,1.US Share,1.Global,1.Semiconductors
+PSN,0.UK Share,0.UK,11.Construction+Infrastructure
+PLUS,0.UK Share,1.Global,7.AssetManagement
+PCT,2.IT,1.Global,9.Tech
+QQ.,0.UK Share,1.Global,12.Diverse
+REL,0.UK Share,1.Global,2.Software+Analysis
+RSW,0.UK Share,1.Global,6.Industrial+Engineering
+ROR,0.UK Share,1.Global,6.Industrial+Engineering
+ATR,2.IT,7.OtherAsian,12.Diverse
+SHEL,0.UK Share,1.Global,5.Energy
+SCT,0.UK Share,0.UK,13.IT-Services
+SPX,0.UK Share,1.Global,6.Industrial+Engineering
+ESCT,2.IT,6.Europe,12.Diverse
+SGE,0.UK Share,1.Global,2.Software+Analysis
+ULVR,0.UK Share,1.Global,3.Retail+Consumer+Books+Fags
+UEM,2.IT,8.Emerging,12.Diverse
+VOF,2.IT,5.Vietnam,12.Diverse

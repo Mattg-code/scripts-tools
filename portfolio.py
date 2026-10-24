@@ -3,7 +3,7 @@
 Portfolio analysis tool
 See if this changes
 
-cat figures.txt | ./portfolio.py -c 18708.76
+cat figures.txt | ./portfolio.py -c 14656.77
 
 """
 # main program
@@ -11,10 +11,11 @@ cat figures.txt | ./portfolio.py -c 18708.76
 import sys
 import argparse
 import copy
+import os
 
 from my_utils import str2float, str2int, StockDataCols
 from analysis import analysePortfolio, MAIN_TITLE_LIST, TOTALS_TRAILER_LIST
-from analysis import PortfolioCols
+from analysis import PortfolioCols, categoriseHoldings
 
 TAB=0x9
 LF=0xa
@@ -230,33 +231,46 @@ def process(ifile, cash):
             total_mv = total_mv + mv
             line = ''        
         
-    analysis = analysePortfolio(epic_map, total_mv)
-    alphabetical_lst = sorted(analysis, key=lambda x: x[PortfolioCols.NAME_COL])
-    displayHoldingList(
-        alphabetical_lst, total_bv, total_mv, csv=True, show_title=True)
-    
-    mrkt_val_lst = sorted(
-        analysis,
-        key=lambda x: x[PortfolioCols.MRKT_COL],
-        reverse=True)
-    displayHoldingList(
-        mrkt_val_lst,
-        total_bv,
-        total_mv,
-        csv=True,
-        show_title=False,
-        show_median=True)
+#    analysis = analysePortfolio(epic_map, total_mv)
+#    alphabetical_lst = sorted(analysis, key=lambda x: x[PortfolioCols.NAME_COL])
+#    displayHoldingList(
+#        alphabetical_lst, total_bv, total_mv, csv=True, show_title=True)
+#    
+#    mrkt_val_lst = sorted(
+#        analysis,
+#        key=lambda x: x[PortfolioCols.MRKT_COL],
+#        reverse=True)
+#    displayHoldingList(
+#        mrkt_val_lst,
+#        total_bv,
+#        total_mv,
+#        csv=True,
+#        show_title=False,
+#        show_median=True)
+#
+#    pl_val_lst = sorted(
+#        analysis,
+#        key=lambda x: x[PortfolioCols.P_L_COL],
+#        reverse=True)
+#    
+#    displayHoldingList(
+#        pl_val_lst,
+#        total_bv,
+#        total_mv,
+#        csv=True,
+#        show_title=False)
 
-    pl_val_lst = sorted(
-        analysis,
-        key=lambda x: x[PortfolioCols.P_L_COL],
-        reverse=True)
-    displayHoldingList(
-        pl_val_lst,
-        total_bv,
-        total_mv,
-        csv=True,
-        show_title=False)
+    # if we can find holdings_info_lut.csv, then we do more meaningful analysis
+
+    the_dir = os.path.dirname(__file__)
+    try:
+        p = the_dir + "/holdings_info_lut.csv"
+        info_lut = open(p, mode='r')
+    except:
+        "No LUT bye"
+        return
+
+    categoriseHoldings(info_lut, epic_map, total_mv, cash)
 
 HLP="Hello"    
     
@@ -270,7 +284,6 @@ def main():
         help="CSV input file")
  
     args = parser.parse_args()
-
     if args.extra_help:
         print(eh)
         sys.exit(0)

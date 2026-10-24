@@ -1,37 +1,29 @@
+MEL
+
 Stocks and Shares ISA
-Available to invest:	£1.12
-Total securities:	£250,812.18
-Total value:	£250,813.30
-￼Current valuation￼Fund this account￼Deal now
+Available to invest:	£160.81
+Total securities:	£247,352.90
+Total value:	£247,513.71
+
+
 SIPP Account
-Available to invest:	£0.00
-Total securities:	£0.00
-Total value:	£0.00
-￼Current valuation￼Fund this account￼Deal now
-SIPP Account
-Available to invest:	£2,785.96
-Total securities:	£46,350.78
-Total value:	£49,136.74
+Available to invest:	£1.03
+Total securities:	£48,481.24
+Total value:	£48,482.27
 
 
 Stocks and Shares ISA
-Available to invest:	£0.70
-Total securities:	£252,935.26
-Total value:	£252,935.96
-￼Current valuation￼Fund this account￼Deal now
+Available to invest:	£57.09
+Total securities:	£250,385.41
+Total value:	£250,442.50
+
 SIPP Account
-Available to invest:	£0.00
-Total securities:	£0.00
-Total value:	£0.00
-￼Current valuation￼Fund this account￼Deal now
-SIPP Account
-Available to invest:	£15,920.98
-Total securities:	£277,566.35
-Total value:	£293,487.33
+Available to invest:	£14,437.84
+Total securities:	£276,907.63
+Total value:	£291,345.47
 
 
-cat figures.txt | ./portfolio.py -c 18708.76
 
-667226.62	848859.65
-
-BV=667226.62 MV=848859.65
+INFLOWS
+02 Oct 2026	Contribution - Order Ref - 32216046	-	£2,500.00
+02 Oct 2026	Contribution - Order Ref - 32215713	-	£3,125.00	
